@@ -6,6 +6,8 @@ import org.slf4j.LoggerFactory
 import Customer
 import ch.torata.ShoppieMcShopFace.Repositories.CustomerRepository
 
+import org.springframework.boot.CommandLineRunner
+import org.springframework.context.annotation.Bean
 @SpringBootApplication
 class ShoppieMcShopFaceApplication
 
@@ -14,17 +16,23 @@ private val log = LoggerFactory.getLogger(ShoppieMcShopFaceApplication::class.ja
 fun main(args: Array<String>) {
 	runApplication<ShoppieMcShopFaceApplication>(*args)
 }
-import org.springframework.boot.CommandLineRunner
-import org.springframework.context.annotation.Bean
 
 @Bean
 fun demo(repository: CustomerRepository): CommandLineRunner {
 	return CommandLineRunner { args ->
-		repository.save(Customer())
-		repository.save(Customer("Chloe", "O'Brian"))
-		repository.save(Customer("Kim", "Bauer"))
-		repository.save(Customer("David", "Palmer"))
-		repository.save(Customer("Michelle", "Dessler"))
+		val newCustomer = Customer(
+			firstName = "John",
+			lastName = "Doe",
+			email = "john.doe@example.com",
+			password = "password123",
+			address = "123 Main St",
+			city = "Cityville",
+			zip = "12345",
+			country = "Countryland",
+			phone = "+123456789"
+		)
+
+		repository.save(newCustomer)
 
 		log.info("Customers found with findAll():")
 		log.info("-----------------------------")
