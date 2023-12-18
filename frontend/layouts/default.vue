@@ -6,6 +6,7 @@
           <a class="nav-item">Cart</a>
       </div>
   </div>
+  <NuxtPage />
 </template>
 <style>
 .nav-bar {
