@@ -1,6 +1,6 @@
 package ch.torata.ShoppieMcShopFace.Repositories
+import ch.torata.ShoppieMcShopFace.Entities.Customer
 
-import Customer
 import org.springframework.data.repository.CrudRepository
 
 interface CustomerRepository : CrudRepository<Customer, Long> {
