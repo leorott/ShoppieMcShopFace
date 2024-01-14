@@ -11,7 +11,7 @@ data class CartItem(
     val shoppingCart: ShoppingCart? = null,
 
     @ManyToOne
-    val product: Product? = null,
+    var product: Product? = null,
 
-    val quantity: Int = 0
+    var quantity: Int = 0
 )

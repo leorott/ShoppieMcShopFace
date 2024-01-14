@@ -9,8 +9,8 @@ data class ShoppingCart(
     val id: Long? = null,
 
     @OneToOne(mappedBy = "shoppingCart")
-    val customer: Customer? = null,
+    var customer: Customer? = null,
 
     @OneToMany(mappedBy = "shoppingCart", cascade = [CascadeType.ALL], orphanRemoval = true)
-    val cartItems: MutableList<CartItem> = mutableListOf()
+    var cartItems: MutableList<CartItem> = mutableListOf()
 )
