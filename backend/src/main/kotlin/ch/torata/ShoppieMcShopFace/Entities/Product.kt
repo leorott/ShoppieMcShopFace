@@ -6,16 +6,16 @@ import jakarta.persistence.Id;
 
 
 @Entity
-class Product (
+data class Product (
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private var id: Long? = null,
-    private var name: String? = null,
+    var name: String? = null,
     private var price: Double? = null,
     private var size: String? = null,
     private var description: String? = null,
-    private var category: String? = null,
+    var category: String? = null,
     private var picture: String? = null,
     private var stock: Int? = null,
     private var rating: Int? = null,
