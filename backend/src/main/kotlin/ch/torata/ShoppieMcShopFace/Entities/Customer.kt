@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Table
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 class Customer (
@@ -20,5 +21,8 @@ class Customer (
     private var city: String? = null,
     private var zip: String? = null,
     private var country: String? = null,
-    private var phone: String? = null
+    private var phone: String? = null,
+    @OneToOne(cascade = [CascadeType.ALL])
+    @JoinColumn(name = "shopping_cart_id", referencedColumnName = "id")
+    val shoppingCart: ShoppingCart? = null
 )

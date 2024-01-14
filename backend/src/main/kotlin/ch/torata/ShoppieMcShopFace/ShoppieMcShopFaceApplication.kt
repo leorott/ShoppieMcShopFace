@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Bean
 
 @SpringBootApplication
 class ShoppieMcShopFaceApplication {
-
     private val log = LoggerFactory.getLogger(ShoppieMcShopFaceApplication::class.java)
 	companion object {
 		@JvmStatic
@@ -20,6 +19,7 @@ class ShoppieMcShopFaceApplication {
 			runApplication<ShoppieMcShopFaceApplication>(*args)
 		}
 	}
+
     @Bean
     fun demo(repository: CustomerRepository): CommandLineRunner {
         return CommandLineRunner { args ->
@@ -45,5 +45,6 @@ class ShoppieMcShopFaceApplication {
             log.info("")
         }
     }
+
 
 }
