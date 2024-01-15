@@ -29,4 +29,6 @@ class CustomerService(private val repository: CustomerRepository) {
     }
 
     fun deleteCustomer(id: Long) = repository.deleteById(id)
+
+    fun findById(id: Long): Customer? = repository.findById(id).orElse(null)
 }
