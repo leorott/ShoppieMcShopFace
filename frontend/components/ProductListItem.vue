@@ -1,8 +1,9 @@
 <template>
   <div class="product-item">
+      <h1>{{product.name}}</h1>
+      <p>{{product.price}} .-</p>
       <NuxtLink :to="getProductDetail(String(product.id))">
-          <h1>{{product.name}}</h1>
-          <span>{{product.price}} .-</span>
+          -->
       </NuxtLink>
   </div>
 </template>
@@ -19,5 +20,8 @@ const getProductDetail = (id: string) => `/products/${id}`
 <style>
 .product-item {
     border-style: solid;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
 }
 </style>

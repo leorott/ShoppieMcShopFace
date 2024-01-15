@@ -28,4 +28,8 @@ class CartItemController(private val repository: CartItemRepository) {
 
     @DeleteMapping("/{id}")
     fun removeCartItem(@PathVariable id: Long) = repository.deleteById(id)
+
+    @DeleteMapping("/delete-all")
+    fun removeAllCartItems() = repository.deleteAll();
+
 }

@@ -1,9 +1,10 @@
 <template>
-  <div class="nav-bar">
-      <p>Shop</p>
+    <div class="nav-bar">
+      <a href="/">Shop</a>
       <div class="nav-items">
-          <a class="nav-item">Products</a>
-          <a class="nav-item">Cart</a>
+          <a class="nav-item" href="/products">Products</a>
+          <a class="nav-item" href="/cart">Cart</a>
+          <a class="nav-item" href="/login">Login</a>
       </div>
   </div>
   <NuxtPage />
@@ -13,6 +14,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
+    font-size: larger;
 }
 
 .nav-items {
@@ -21,5 +24,12 @@
 
 .nav-item {
     margin-right: 10px;
+}
+</style>
+<script setup lang="ts">
+</script>
+<style>
+p {
+    font-family: -apple-system;
 }
 </style>
